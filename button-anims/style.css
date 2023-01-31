@@ -9,7 +9,6 @@ body {
 }
 
 .btn {
-  perspective: 500px;
   position: relative;
   background-color: white;
   color: #1f1f1f;
@@ -290,7 +289,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:white;
+  color: white;
   background-color: #1f1f1f;
   transform: translatez(500px);
   z-index: -1;
@@ -315,9 +314,8 @@ button {
   color: white;
 }
 
-
 #orange-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -331,4 +329,59 @@ button {
 
 #orange-hover:hover::before {
   height: 190%;
-} 
+}
+
+#rolodex {
+  background-color: rgb(194, 180, 54);
+  overflow: visible;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease;
+}
+
+#rolodex:hover {
+  z-index: 1 !important;
+}
+
+#rolodex::before,
+#rolodex::after {
+  content: "Hover Me";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rolodex,
+#rolodex::before,
+#rolodex::after {
+  border: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+#rolodex::before {
+  transform: rotateX(270deg);
+  transform-origin: bottom;
+  background-color: rgb(42, 190, 42);
+  transition: transform 0.3s ease 0.2s;
+}
+
+#rolodex::after {
+  transform: rotateX(270deg);
+  transform-origin: top;
+  background-color: rgb(245, 49, 49);
+  transition: transform 0.3s ease 0.3s;
+}
+
+#rolodex:hover::before {
+  transform: rotateX(0deg);
+}
+
+#rolodex:hover::after {
+  transform: rotateX(0deg);
+}
