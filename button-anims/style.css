@@ -1,0 +1,334 @@
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgb(231, 231, 231);
+}
+
+.btn {
+  perspective: 500px;
+  position: relative;
+  background-color: white;
+  color: #1f1f1f;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#yellow-hover {
+  position: relative;
+  background-color: transparent;
+  color: black;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+#yellow-hover::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+#yellow-hover:hover::before {
+  transform: rotate(0deg);
+}
+
+/* my styles */
+/* #yellow-hover::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  transform: rotatex(-90deg);
+  transition: transform 0.3s ease;
+}
+
+#yellow-hover:hover::before {
+  transform: rotatex(0deg) rotatez(180deg);
+} */
+
+#purple-slide {
+  position: relative;
+  background-color: transparent;
+  color: black;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
+
+#purple-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: purple;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+#purple-slide:hover {
+  color: white;
+}
+
+#purple-slide:hover::before {
+  width: 100%;
+}
+
+#bw-cross {
+  position: relative;
+  background-color: transparent;
+  color: black;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+  transition: color 1s ease;
+}
+
+#bw-cross:hover {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+#bw-cross::before,
+#bw-cross::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #2b2b2b;
+  transition: 0.8s transform ease;
+}
+
+#bw-cross::before {
+  transform: rotatex(90deg);
+}
+
+#bw-cross::after {
+  transform: rotatey(90deg);
+}
+
+#bw-cross:hover::before {
+  transform: rotatex(0deg);
+}
+
+#bw-cross:hover::after {
+  transform: rotatey(0deg);
+}
+
+#bolder-hover {
+  position: relative;
+  background-color: transparent;
+  color: rgb(216, 64, 64);
+  outline: 2px rgb(216, 64, 64) solid;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+  transition: color 0.3s ease, outline 0.1s ease, font-weight 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+
+#bolder-hover:hover {
+  font-weight: 700;
+  letter-spacing: 2px;
+  outline: 4px rgb(216, 64, 64) solid;
+}
+
+#yeah-swipe {
+  position: relative;
+  background-color: hsl(0, 0%, 15%);
+  border: none;
+  outline: hsl(0, 0%, 15%) 2px solid;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+  transition: color 1s ease;
+}
+
+#yeah-swipe::before {
+  content: "YEAH!";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgb(216, 64, 64);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+#yeah-swipe:hover::before {
+  transform: translateY(0);
+}
+
+#glowing-hover {
+  position: relative;
+  background-color: transparent;
+  color: black;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+  transition: background-color 0.5s ease;
+}
+
+#glowing-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 40%;
+  background-color: white;
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+#glowing-hover:hover {
+  background-color: rgb(216, 64, 64);
+  color: white;
+}
+
+#glowing-hover:hover::before {
+  transform: translateX(100%);
+}
+
+#sweepy-yellow {
+  position: relative;
+  background-color: hsl(0, 0%, 15%);
+  border: none;
+  outline: hsl(0, 0%, 15%) 2px solid;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+  transition: color 1s ease;
+}
+
+#sweepy-yellow::after,
+#sweepy-yellow::before {
+  content: "Hover Me";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(0, 0%, 15%);
+  background-color: rgb(255, 255, 93);
+  transition: transform 0.2s ease;
+}
+
+#sweepy-yellow::after {
+  transform: translate(0);
+}
+
+#sweepy-yellow::before {
+  transform: translate(100%, -100%);
+}
+
+#sweepy-yellow:hover::after {
+  transform: translate(-100%, 100%);
+}
+
+#sweepy-yellow:hover::before {
+  transform: translate(0);
+}
+
+#scaled-text {
+  perspective: 500px;
+  position: relative;
+  background-color: white;
+  color: #1f1f1f;
+  z-index: 1;
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+#scaled-text::before {
+  content: "Hover Me";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  background-color: #1f1f1f;
+  transform: translatez(500px);
+  z-index: -1;
+  transition: transform 0.2s ease, opacity 0.5s ease;
+}
+
+#scaled-text:hover::before {
+  z-index: 1;
+  transform: translatez(0);
+  opacity: 1;
+}
+
+#orange-hover {
+  border: tomato solid 2px;
+  background-color: transparent;
+  color: tomato;
+  font-size: 25px;
+  transition: color 0.3s ease;
+}
+
+#orange-hover:hover {
+  color: white;
+}
+
+
+#orange-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: tomato;
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
+  transition: transform 0.3s ease, height 0.3s ease;
+}
+
+#orange-hover:hover::before {
+  height: 190%;
+} 
